@@ -19,8 +19,7 @@ def add_to_bag(request, item_id):
     if item_id in list(bag.keys()):  # cjeck if element exists
         bag[item_id] += quantity  # update quantity
     else:
-        bag[item_id] = quantity  # create and add quantity to cart 
+        bag[item_id] = quantity  # create and add quantity to cart
 
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect(redirect_url)
