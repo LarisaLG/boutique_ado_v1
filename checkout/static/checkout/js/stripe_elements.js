@@ -25,9 +25,7 @@ var style = {
         iconColor: '#dc3545'
     }
 };
-var card = elements.create('card', {
-    style: style
-});
+var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
 // Handle realtime validation errors on the card element
@@ -51,9 +49,7 @@ var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    card.update({
-        'disabled': true
-    });
+    card.update({'disabled': true});
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
@@ -72,9 +68,7 @@ form.addEventListener('submit', function (ev) {
             $(errorDiv).html(html);
             $('#payment-form').fadeToggle(100);
             $('#loading-overlay').fadeToggle(100);
-            card.update({
-                'disabled': false
-            });
+            card.update({'disabled': false});
             $('#submit-button').attr('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
